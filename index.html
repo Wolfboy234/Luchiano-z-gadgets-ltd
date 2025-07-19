@@ -3,58 +3,65 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Luchiano'z Gadgets Ltd - Buy & Sell Gadgets</title>
-  <script src="https://cdn.tailwindcss.com"></script>
-  <link rel="stylesheet" href="css/styles.css" />
+  <title>Luchiano'z Gadgets Ltd</title>
+  <link rel="stylesheet" href="styles.css">
 </head>
-<body class="bg-gray-50 text-gray-800">
+<body>
 
-  <header class="bg-white shadow sticky top-0 z-10">
-    <div class="max-w-6xl mx-auto px-4 py-4 flex justify-between items-center">
-      <h1 class="text-2xl font-bold text-blue-600">Luchiano'z Gadgets Ltd</h1>
-      <nav class="space-x-4">
-        <a href="#" class="text-gray-600 hover:text-blue-500">Home</a>
-        <a href="#products" class="text-gray-600 hover:text-blue-500">Shop</a>
-        <a href="#" class="text-gray-600 hover:text-blue-500">Sell</a>
-        <a href="#" class="text-gray-600 hover:text-blue-500">Login</a>
-      </nav>
-    </div>
+  <header>
+    <h1>Luchiano'z Gadgets Ltd</h1>
+    <button class="cart-btn" onclick="toggleCart()">🛒 View Cart (<span id="cart-count">0</span>)</button>
   </header>
 
-  <section class="bg-blue-100 py-16">
-    <div class="max-w-4xl mx-auto text-center">
-      <h2 class="text-4xl font-bold mb-4">Buy & Sell Used Gadgets Easily</h2>
-      <p class="text-lg text-gray-700 mb-6">Get great deals on phones, laptops, and more — or list your own device for sale.</p>
-      <a href="#products" class="bg-blue-600 text-white px-6 py-3 rounded-full hover:bg-blue-700">Browse Gadgets</a>
-    </div>
-  </section>
+  <!-- Cart Sidebar -->
+  <div class="cart" id="cart">
+    <h3>Your Cart</h3>
+    <ul class="cart-items" id="cart-items"></ul>
+    <p><strong>Total:</strong> $<span id="cart-total">0</span></p>
+    <button class="checkout-btn" onclick="checkout()">Checkout</button>
+  </div>
 
-  <section class="py-8 bg-white shadow">
-    <div class="max-w-6xl mx-auto px-4 flex flex-col sm:flex-row items-center gap-4">
-      <input id="searchInput" type="text" placeholder="Search gadgets..." class="w-full sm:w-1/2 px-4 py-2 border rounded shadow-sm">
-      <select id="categoryFilter" class="px-4 py-2 border rounded shadow-sm">
-        <option value="">All Categories</option>
-        <option value="Phones">Phones</option>
-        <option value="Laptops">Laptops</option>
-        <option value="Wearables">Wearables</option>
-      </select>
+  <!-- Product Categories -->
+  <h2>💻 Laptop Category</h2>
+  <div class="category">
+    <div class="product">
+      <img src="laptops.jpg" alt="Laptops" />
+      <p>HP EliteBook Stack</p>
+      <p>$900</p>
+      <button onclick="addToCart('HP EliteBook Stack', 900)">Add to Cart</button>
     </div>
-  </section>
+  </div>
 
-  <section id="products" class="py-12">
-    <div class="max-w-6xl mx-auto px-4">
-      <h3 class="text-2xl font-semibold mb-6">Gadgets for Sale</h3>
-      <div id="productGrid" class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
-      </div>
+  <h2>📺 TVs and Monitors Category</h2>
+  <div class="category">
+    <div class="product">
+      <img src="omen_monitor.jpg" alt="Omen Monitor" />
+      <p>OMEN Curved Monitor 34”</p>
+      <p>$450</p>
+      <button onclick="addToCart('OMEN Monitor', 450)">Add to Cart</button>
     </div>
-  </section>
+  </div>
 
-  <footer class="bg-white border-t mt-12 py-6">
-    <div class="max-w-6xl mx-auto px-4 text-center text-gray-600">
-      &copy; 2025 Luchiano'z Gadgets Ltd. All rights reserved.
+  <h2>⌚ Wearables Category</h2>
+  <div class="category">
+    <div class="product">
+      <img src="https://via.placeholder.com/300x200?text=Smart+Watch" alt="Smart Watch" />
+      <p>FitBand Pro Watch</p>
+      <p>$150</p>
+      <button onclick="addToCart('FitBand Pro Watch', 150)">Add to Cart</button>
     </div>
-  </footer>
+  </div>
 
-  <script src="js/app.js"></script>
+  <h2>🎮 Gaming Stations Category</h2>
+  <div class="category">
+    <div class="product">
+      <img src="https://via.placeholder.com/300x200?text=Gaming+Console" alt="Gaming Console" />
+      <p>GameStation 5X</p>
+      <p>$600</p>
+      <button onclick="addToCart('GameStation 5X', 600)">Add to Cart</button>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
 </body>
 </html>
