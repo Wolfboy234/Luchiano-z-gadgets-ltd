@@ -1,0 +1,82 @@
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+}
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 20px;
+  background: var(--header-bg);
+  color: var(--text-color);
+}
+.header input {
+  padding: 6px;
+}
+.theme-switch {
+  margin: 0 10px;
+}
+.category-nav {
+  display: flex;
+  gap: 10px;
+  background: var(--nav-bg);
+  padding: 10px;
+  justify-content: center;
+}
+.category-nav button {
+  padding: 5px 15px;
+  border: none;
+  background: var(--btn-bg);
+  color: var(--text-color);
+  cursor: pointer;
+}
+main {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 20px;
+  padding: 20px;
+}
+.product-card {
+  border: 1px solid var(--border-color);
+  padding: 10px;
+  text-align: center;
+  background: var(--card-bg);
+}
+.cart {
+  position: fixed;
+  right: 20px;
+  top: 80px;
+  background: var(--card-bg);
+  border: 1px solid var(--border-color);
+  padding: 15px;
+  display: none;
+}
+.cart ul {
+  list-style: none;
+  padding: 0;
+}
+.cart-btn {
+  background: var(--btn-bg);
+  color: var(--text-color);
+  padding: 5px 10px;
+  border: none;
+  cursor: pointer;
+}
+.light-theme {
+  --header-bg: #ffffff;
+  --nav-bg: #f2f2f2;
+  --card-bg: #fff;
+  --btn-bg: #333;
+  --border-color: #ddd;
+  --text-color: #000;
+  background: #f9f9f9;
+}
+.dark-theme {
+  --header-bg: #222;
+  --nav-bg: #333;
+  --card-bg: #444;
+  --btn-bg: #555;
+  --border-color: #666;
+  --text-color: #fff;
+  background: #111;
+}

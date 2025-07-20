@@ -6,63 +6,59 @@
   <title>Luchiano'z Gadgets Ltd</title>
   <link rel="stylesheet" href="styles.css" />
 </head>
-<body>
-  <header>
+<body class="light-theme">
+  <header class="header">
     <h1>Luchiano'z Gadgets Ltd</h1>
-    <button class="cart-btn" onclick="toggleCart()">Cart (<span id="cart-count">0</span>)</button>
+    <div class="header-right">
+      <input type="text" id="search-input" placeholder="Search gadgets..." />
+      <label class="theme-switch">
+        <input type="checkbox" id="theme-toggle" />
+        <span>🌙</span>
+      </label>
+      <button class="cart-btn" onclick="toggleCart()">Cart (<span id="cart-count">0</span>)</button>
+    </div>
   </header>
 
-  <div id="search-container">
-    <input type="text" id="search-input" placeholder="Search for a product..." />
-  </div>
+  <nav class="category-nav">
+    <button onclick="filterCategory('all')">All</button>
+    <button onclick="filterCategory('laptops')">Laptops</button>
+    <button onclick="filterCategory('monitors')">TVs & Monitors</button>
+    <button onclick="filterCategory('wearables')">Wearables</button>
+    <button onclick="filterCategory('gaming')">Gaming Stations</button>
+  </nav>
 
-  <section>
-    <h2>Laptops</h2>
-    <div class="category">
-      <div class="product">
-        <img src="https://via.placeholder.com/300x200?text=HP+EliteBook+Stack" alt="Laptop" />
-        <p>HP EliteBook Stack</p>
-        <p>$799</p>
-        <button onclick="addToCart('HP EliteBook Stack', 799)">Buy</button>
-      </div>
+  <main id="product-list">
+    <div class="product-card laptops">
+      <img src="https://via.placeholder.com/300x200?text=HP+EliteBook" />
+      <h3>HP EliteBook Stack</h3>
+      <p>$799</p>
+      <button onclick="addToCart('HP EliteBook Stack', 799)">Buy</button>
     </div>
-
-    <h2>TVs & Monitors</h2>
-    <div class="category">
-      <div class="product">
-        <img src="https://via.placeholder.com/300x200?text=OMEN+Monitor" alt="OMEN Monitor" />
-        <p>OMEN Monitor</p>
-        <p>$299</p>
-        <button onclick="addToCart('OMEN Monitor', 299)">Buy</button>
-      </div>
+    <div class="product-card monitors">
+      <img src="https://via.placeholder.com/300x200?text=OMEN+Monitor" />
+      <h3>OMEN Monitor</h3>
+      <p>$299</p>
+      <button onclick="addToCart('OMEN Monitor', 299)">Buy</button>
     </div>
-
-    <h2>Wearables</h2>
-    <div class="category">
-      <div class="product">
-        <img src="https://via.placeholder.com/300x200?text=Smart+Watch" alt="Wearable" />
-        <p>Smart Watch</p>
-        <p>$199</p>
-        <button onclick="addToCart('Smart Watch', 199)">Buy</button>
-      </div>
+    <div class="product-card wearables">
+      <img src="https://via.placeholder.com/300x200?text=Smart+Watch" />
+      <h3>Smart Watch</h3>
+      <p>$199</p>
+      <button onclick="addToCart('Smart Watch', 199)">Buy</button>
     </div>
-
-    <h2>Gaming Stations</h2>
-    <div class="category">
-      <div class="product">
-        <img src="https://via.placeholder.com/300x200?text=PlayStation+5" alt="Gaming Station" />
-        <p>PlayStation 5</p>
-        <p>$499</p>
-        <button onclick="addToCart('PlayStation 5', 499)">Buy</button>
-      </div>
+    <div class="product-card gaming">
+      <img src="https://via.placeholder.com/300x200?text=PlayStation+5" />
+      <h3>PlayStation 5</h3>
+      <p>$499</p>
+      <button onclick="addToCart('PlayStation 5', 499)">Buy</button>
     </div>
-  </section>
+  </main>
 
   <div class="cart" id="cart">
     <h3>Your Cart</h3>
-    <ul id="cart-items" class="cart-items"></ul>
+    <ul id="cart-items"></ul>
     <p>Total: $<span id="cart-total">0.00</span></p>
-    <button class="checkout-btn" onclick="checkout()">Checkout</button>
+    <button onclick="checkout()">Checkout</button>
   </div>
 
   <script src="script.js"></script>
